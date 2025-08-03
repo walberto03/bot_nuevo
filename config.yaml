@@ -1,0 +1,94 @@
+symbols:
+  - EURUSD
+  - GBPUSD
+  - XAUUSD
+
+date:
+  start_cache: "2022-01-01"
+
+api:
+  # Fuente principal de precios
+  price_provider: "twelvedata"
+  news_provider:  "NewsAPI"
+
+  # --- Claves API ---
+  twelve_data_api_key:   "72678bcefd114f2ebf1476923b19f499"
+  newsapi_key:           "e97fe9ba459a4dbe8c693c4112af67f4"
+  twitter_bearer:        "AAAAAAAAAAAAAAAAAAAAAFLq0gEAAAAA9kmIv%2B2Jz3EvHihEZG4u0Gg74Bw%3DZQBBfdreFA91u5l50nVpIfuKOmggKVeVCmmBKjvWFe01wY9hJc"
+  alpha_vantage_api_key: "66L98TEIWL87R7VO"
+  fmp_api_key:           "rz7oCaBfuJrB5B2K1sq0Y1rhLzaF2EdZ"
+  finnhub_api_key:       "c1234567-1234-1234-1234-1234567890ab"
+  api_rate_limit_delay: 10  # Nuevo: Delay para limits free
+
+parameters:
+  # Indicadores técnicos
+  sma_short:        20
+  sma_long:         50
+  rsi_window:       14
+  macd_fast:        12
+  macd_slow:        26
+  macd_signal:       9
+  bollinger_window: 20
+  atr_window:       14
+
+  # Validación y precisión esperada
+  target_accuracy:       0.65
+  retrain_interval_days: 15
+  retrain_threshold:     0.60
+  use_deep_learning_patterns: false  # Nuevo: Para pattern_analyzer
+
+risk:
+  stake_currency: "USDT"  # Nuevo: Moneda base
+  default_position_size: 1000  # Nuevo: Valor default (no null)
+  max_open_trades: 3  # Nuevo: Máx trades abiertos
+  trailing_stop: true  # Nuevo: Activa trailing SL
+  stop_loss_ratio: 0.01
+  risk_reward: 2.0
+  max_exposure: 0.05
+
+resolutions:
+  - "1d"
+  - "1h"
+  - "4h"
+  - "30min"
+  - "15min"
+
+training:
+  # Hiperparámetros de entrenamiento
+  num_epochs: 30            # Número de epochs
+  batch_size: 48            # Tamaño de cada batch
+  sequence_length: 72       # Longitud de la secuencia temporal
+  learning_rate: 0.0005     # Tasa de aprendizaje del optimizador
+  bidirectional: false       # LSTM bidireccional
+  hidden_size: 256          # Tamaño de la capa oculta de la LSTM
+  num_layers: 4             # Número de capas LSTM
+  early_stopping_patience: 10  # Paciencia para early stopping
+  oversample: true          # Activar oversampling de la clase minoritaria
+  undersample: false        # Activar undersample de la clase mayoritaria
+  validation_split: 0.2     # Fracción de datos para validación
+
+
+  attention_heads:           8        # número de cabezas de atención
+  attention_ff_dim:          256      # dimensión interna del feed-forward
+  weight_decay:              0.0      # decaimiento de peso para Adam
+  dropout:                   0.1      # probabilidad de dropout en atención
+  pos_weight_factor:         1.5      # multiplicador para el pos_weight de la pérdida
+  classification_threshold:  0.5      # umbral por defecto para convertir prob→clase
+  focal_gamma:               2.0      # gamma de FocalLoss
+
+news_training:  # Nuevo: Para NewsOnlyTrainer
+  learning_rate: 1e-4
+  batch_size: 32
+  hidden_size: 128
+  dropout: 0.1
+
+notifications:  # Nuevo: Para anuncios
+  telegram_token: "7809729966:AAECpwAA1kxaHwTswYdazDabV7Tiuc6wy0o"
+  telegram_chat_id: "7929589220"
+  enable_notifications: true
+  log_level: "info"
+
+dry_run: true  # Nuevo: Modo simulación
+backtest:  # Nuevo: Params para simulación
+  fees: 0.001
+  slippage: 0.0005

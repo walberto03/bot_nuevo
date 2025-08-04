@@ -1,0 +1,12 @@
+yfinance==0.2.36
+pandas==2.2.0
+numpy==1.26.4
+scikit-learn==1.4.0
+textblob==0.17.1
+nltk==3.8.1
+requests==2.31.0
+transformers==4.37.2
+torch==2.2.0
+huggingface-hub==0.20.3
+tweepy
+matplotlib==3.8.3

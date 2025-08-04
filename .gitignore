@@ -1,45 +1,47 @@
-# Entorno Python
-env/
+# Git internals (no subas)
+.git/*
+
+# Entorno virtual
 .venv/
+env/
+
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 *.egg-info/
-pip-wheel-metadata/
 
-# Datos, modelos, resultados
-data/
-models/
+# Datos, modelos, results
+trading_bot/data/
+trading_bot/models/
+trading_bot/results/
 logs/
-results/
 *.db
-*.sqlite
-*.sqlite3
-*.csv
-*.xlsx
-*.jsonl
-trading_bot/data/*
-trading_bot/models/*
-trading_bot/results/*
+*.db.bak
+*.json  # Excluye JSONs como progreso_descarga.json, twitter cache
+*.xlsx  # Backups como ~$ajuste hiperparametros.xlsx
 
-# Archivos temporales y backups
+# Temporales y backups
 *.log
 *.bak
 *.swp
-~$*
 *.tmp
+~$*
 
-# Archivos de sistema y editores
+# Sistema y editores
 .DS_Store
 .vscode/
 *.code-workspace
 
-# Proyecto ii-researcher (no relevante)
+# Proyecto separado
 ii-researcher/
 
-# Scripts sueltos y no esenciales
-main.py  # En raíz, probablemente duplicado de trading_bot/src/main.py
+# Tests
+tests/
+
+# Scripts sueltos en raíz
+main.py  # Si duplicado de trading_bot/src/main.py
 progreso_descarga.json
 progress_descarga.json
 recrear_entorno.sh
@@ -51,9 +53,6 @@ trading_bot.py
 verificar_y_actualizar_progreso.py
 visualizar_precios.py
 
-# Directorios y archivos no esenciales
-trading_bot/trading_bot/
-trading_bot/scripts/
-tests/
-
-# Archivos raíz opcionales (mantén README.md si quieres documentación)
+# Otros no esenciales
+file_list.txt  # Temporal
+.env  # Secrets

@@ -1,0 +1,26 @@
+yfinance==0.2.36
+pandas==2.2.0
+numpy==1.26.4
+scikit-learn==1.6.1
+textblob==0.17.1
+nltk==3.8.1
+requests==2.32.3,<3
+
+# Nuevas librerías
+pyyaml
+pytest
+torch
+transformers
+optuna
+sqlalchemy
+tweepy==4.14.0
+iqoptionapi
+ii-researcher
+joblib
+sentence-transformers
+uvloop
+accelerate
+rich
+tqdm
+imbalanced-learn>=0.13.0
+python-dotenv>=0.21.0

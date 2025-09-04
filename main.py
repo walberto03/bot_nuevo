@@ -234,7 +234,7 @@ def execute_mt5_trade(etiqueta, sl, tp, entry, prob):
     """Ejecuta trade demo en MT5."""
     mt5_login = os.getenv("MT5_LOGIN")
     mt5_password = os.getenv("MT5_PASSWORD")
-    mt5_server = os.getenv("MT5_SERVER", "ICMarketsSC-Demo")
+    mt5_server = os.getenv("MT5_SERVER", "MetaQuotes-Demo")
     if not mt5.initialize(login=int(mt5_login) if mt5_login else 0, password=mt5_password, server=mt5_server):
         print("[MT5] ⚠️ Error al inicializar MT5")
         return
@@ -273,7 +273,7 @@ def run_24_5():
     Thread(target=telegram_reader.start_polling, daemon=True).start()
     mt5_login = os.getenv("MT5_LOGIN")
     mt5_password = os.getenv("MT5_PASSWORD")
-    mt5_server = os.getenv("MT5_SERVER", "ICMarketsSC-Demo")
+    mt5_server = os.getenv("MT5_SERVER", "MetaQuotes-Demo")
     if not mt5.initialize(login=int(mt5_login) if mt5_login else 0, password=mt5_password, server=mt5_server):
         print("[MT5] ⚠️ Error al inicializar MT5")
         sys.exit(1)

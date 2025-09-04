@@ -12,6 +12,7 @@ pytest
 torch
 transformers
 optuna
+uvloop
 sqlalchemy
 tweepy==4.14.0
 iqoptionapi

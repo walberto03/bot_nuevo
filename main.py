@@ -1,5 +1,4 @@
-```python
-#!/usr/bin/env python3
+
 import os
 import sys
 import requests
@@ -343,4 +342,3 @@ if __name__ == "__main__":
                 opcion_7_optuna_noticias()
             else:
                 print("⚠️ Opción inválida. Elige un número entre 0 y 7.\n")
-```

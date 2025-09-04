@@ -56,3 +56,4 @@ visualizar_precios.py
 # Otros no esenciales
 file_list.txt  # Temporal
 .env  # Secrets
+.env

@@ -1,6 +1,6 @@
 yfinance==0.2.36
 pandas==2.2.0
-numpy==1.26.4
+numpy
 scikit-learn==1.6.1
 textblob==0.17.1
 nltk==3.8.1
@@ -18,7 +18,6 @@ iqoptionapi
 ii-researcher
 joblib
 sentence-transformers
-uvloop
 accelerate
 rich
 tqdm
